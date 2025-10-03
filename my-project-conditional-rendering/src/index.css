@@ -1,0 +1,17 @@
+.welcome-text{
+    background-color: #3737fb;
+    color: white;
+    padding: 10px;
+    font-size: 2em;
+    margin: 0;
+    border-radius: 10px;
+
+}
+.login-failed{
+    background-color: #ff0000ed;
+    color: white;
+    padding: 10px;
+    font-size: 2em;
+    margin: 0;
+    border-radius: 10px;
+}
