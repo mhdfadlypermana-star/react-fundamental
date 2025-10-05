@@ -1,4 +1,4 @@
-import MyComponent from "./assets/MyComponent"
+import MyComponent from "./MyComponent"
 
 function App() {
   return(
