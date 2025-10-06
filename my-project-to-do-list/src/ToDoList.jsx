@@ -8,13 +8,37 @@ function ToDoList() {
     setNewTask(event.target.value);
   }
 
-  function addTask() {}
+  function addTask() {
+    if(newTask.trim() !== ""){
+    setTasks(tasks => [...tasks, newTask]);
+    setNewTask("");
+    }
+  }
 
-  function deleteTask(index) {}
+  function deleteTask(index) {
+    const updateTasks = tasks.filter((_,i) => i !== index);
+    setTasks(updateTasks); 
+  }
 
-  function moveTaskUp(index) {}
+  function moveTaskUp(index) {
+    
+    if(index > 0){
+        const moveUp =[...tasks];
+        [moveUp[index],moveUp[index - 1]]=
+        [moveUp[index - 1], moveUp[index]];
+        setTasks(moveUp);
+    }
+  }
 
-  function moveTaskDown(index) {}
+  function moveTaskDown(index) {
+
+    if(index < tasks.length -1){
+        const moveDown =[...tasks];
+        [moveDown[index],moveDown[index + 1]]=
+        [moveDown[index + 1], moveDown[index]];
+        setTasks(moveDown);
+    }
+  }
 
   return(
     <div className="to-do-list">
@@ -26,7 +50,7 @@ function ToDoList() {
                     placeholder="Enter a task" 
                     onChange={handleInputChange} 
                     value={newTask} />
-            <button className="add-button">Add</button>
+            <button className="add-button" onClick={addTask}>Add</button>
         </div>
         <ol>
             {tasks.map((task, index) => 
@@ -36,10 +60,10 @@ function ToDoList() {
                             onClick={() => deleteTask(index)}>🗑️
                     </button>
                     <button className="move-button"
-                            onClick={() => moveTaskUpTask(index)}>👆
+                            onClick={() => moveTaskUp(index)}>👆
                     </button>
                     <button className="move-button"
-                            onClick={() => moveTaskUpDown(index)}>👇
+                            onClick={() => moveTaskDown(index)}>👇
                     </button>
                 </li>
             )}
