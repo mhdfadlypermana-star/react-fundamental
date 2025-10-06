@@ -23,8 +23,12 @@ function DigitalClock(){
 
         hours =hours % 12 || 12;
 
-        return `${hours}:${minutes}:${seconds} ${zona}`;
+        return `${Zero(hours)}:${Zero(minutes)}:${Zero(seconds)} ${zona}`;
 
+    }
+
+    function Zero(number){
+        return(number < 10 ? "0" : 0 ) + number;
     }
 
     return(<>
