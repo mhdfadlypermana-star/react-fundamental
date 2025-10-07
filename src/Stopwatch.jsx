@@ -1,0 +1,39 @@
+import { useState , useEffect, useContext, useRef } from 'react'
+
+function Stopwatch(){
+    
+    const [isRunning, setIsRunning ] = useState(false);
+    const [elapseTime, setElapseTime] = useState(0);
+    const intervalIdRef = useRef(null);
+    const startTimeRef = useRef(0);
+
+    useEffect(() => {
+
+    },[isRunning]);
+
+    function start(){
+
+    }
+    function stop(){
+        
+    }
+    function reset(){
+        
+    }
+    function formatTime(){
+        return `00:00:00`;
+    }
+
+    return(
+        <div className='stopwatch'>
+            <div className='display'>{formatTime()}</div>
+            <button onClick={start()} className='start-button'>Start</button>
+            <button onClick={reset()} className='reset-button'>Reset</button>
+            <button onClick={stop()} className='stop-button'>Stop</button>
+
+        </div>
+    );
+
+}
+
+export default Stopwatch;
