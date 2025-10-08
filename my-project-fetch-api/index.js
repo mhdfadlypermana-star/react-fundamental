@@ -20,6 +20,6 @@ async function fetchData() {
         imgElement.style.display = "block";
 
     } catch (error) {
-        console.error(error);
+        console.log(error);
     }
 }
