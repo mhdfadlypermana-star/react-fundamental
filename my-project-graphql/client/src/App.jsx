@@ -44,8 +44,6 @@ function App() {
 
   return (
     <>
-      <h1>Users</h1>
-
       <div>
         {getUserByIdLoading ? (
           <p>Loading ninja...</p>
@@ -55,9 +53,12 @@ function App() {
           <>
             <h2>Ninja Pilihan</h2>
             <p>Name: {getUserByIdData?.getUserById?.name}</p>
+            <p>Name: {getUserByIdData?.getUserById?.age}</p>
           </>
         )}
       </div>
+
+      <h1>Users</h1>
 
       <div>
         {getUsersData?.getUsers.map((user) => (
