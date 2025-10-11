@@ -8,7 +8,7 @@ import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Ka
 } from './pages'
 
 const App = () => {
-  const activeMenu = false;
+  const activeMenu = true;
   return (
     <div>
       <BrowserRouter>
@@ -26,9 +26,9 @@ const App = () => {
           </div>
           {activeMenu ? (
             <div
-              className="w-70 fixed sidebar 
+              className="w-72 fixed sidebar 
                     dark:bg-secondary-dark-bg
-                    bg-white"
+                    bg-white shadow-xl"
             >
               <Sidebar />
             </div>
